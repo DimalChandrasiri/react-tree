@@ -17,7 +17,7 @@ module.exports = {
     },
     rules: {
         "eol-last": "error",
-        "quotes": ["warn", "double"],
+        "quotes": ["warn", "single"],
         "max-len": ["warn", { "code": 120 }],
         "sort-keys": ["warn", "asc"],
         "comma-dangle": ["warn", "never"],

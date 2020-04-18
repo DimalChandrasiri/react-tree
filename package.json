@@ -5,7 +5,7 @@
   "main": "index.ts",
   "scripts": {
     "start": "react-scripts-ts start",
-    "build": "npm run lint && npm run build-lib && build-storybook",
+    "build": "npm run lint && build-storybook",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx ."
@@ -40,6 +40,7 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.19.0",
     "eslint-plugin-standard": "^4.0.1",
     "html-webpack-plugin": "^4.2.0",
     "react-docgen-typescript-loader": "^3.7.2",

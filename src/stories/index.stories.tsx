@@ -1,4 +1,4 @@
-import App from "../components/app";
+import App from '../components/app';
 import React from 'react';
 
 export default { title: 'Button' };

@@ -3,7 +3,6 @@ import { TreeNode } from 'models/general';
 
 interface TreeViewProps {
     data: TreeNode[];
-    commonNodeClass?: string[]
 }
 
 export const TreeView: FunctionComponent<TreeViewProps> = (props: TreeViewProps): ReactElement => {
@@ -12,6 +11,24 @@ export const TreeView: FunctionComponent<TreeViewProps> = (props: TreeViewProps)
         data
     } = props;
 
+    /**
+     * Util method to render parent node.
+     * 
+     * @param children - Array of Tree Node object.
+     */
+    const renderNodes = (children: TreeNode[]): ReactElement[] => {
+        const childElements: ReactElement[] = [];
+        children.forEach((node: TreeNode) => {
+            childElements.push(renderNode(node));
+        })
+        return childElements;
+    }
+
+    /**
+     * Util method to render checkbox.
+     * 
+     * @param node - Tree node object.
+     */
     const renderCheckBox = (node: TreeNode): ReactElement => {
         return (
             <input
@@ -25,14 +42,11 @@ export const TreeView: FunctionComponent<TreeViewProps> = (props: TreeViewProps)
         )
     }
 
-    const renderNodes = (children: TreeNode[]): ReactElement[] => {
-        const childElements: ReactElement[] = [];
-        children.forEach((node: TreeNode) => {
-            childElements.push(renderNode(node));
-        })
-        return childElements;
-    }
-
+    /**
+     * Util method to render single node. 
+     * 
+     * @param node - Tree node object.
+     */
     const renderNode = (node: TreeNode) => {
         return (
             <div className="tree-node">
